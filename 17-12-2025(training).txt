@@ -1,0 +1,87 @@
+#Wed-17/12/25 
+#(Sets,Lists)
+s1={53,2,"q",3.9,2}
+print(s1)
+l1=[53,2,"q",3.9]
+print(l1)
+print(l1.index(53))
+
+#For loop 
+for i in l1:
+    print(i)
+
+#Dictionary
+d1={
+    "name":"Derry",
+    "Work":"Circus Hoster",
+    "phone-no":+221221,
+    "Address":"Hyd",
+    "Gender":"male"
+}
+print("keys in D1 are",d1.keys())
+print("Values in D1 are",d1.values())
+print("Gettinf Particular name in D1",d1.get("name"))
+
+#Frozenset
+a = frozenset(["cat", "dog", "lion"])
+print("bear" in a)
+ 
+#Function (def)
+def add():
+    return "The Solution for 23+45 is ",23+45
+r =add()
+print(r)
+
+#UserInput example
+s=int(input("Enter Your Birth year: "))
+cy=2025
+de=cy-s
+print("your age is ",de)
+
+#Api - rules and policies to exchange and comunicate with browsers
+#for creating an api we need to create an function which gets data(get,put,post) and process methods(request)
+#Api function using api status codes 
+def api_status(code):
+    if code == 302:
+        return "Success"
+    else:
+        return "Failed"
+print(api_status(302))
+
+#Request library - popular python library used for making HTTP requests,its an external library.
+#get-Retrieves data,post-Sends data,head-Retrieves only headers,put-Replaces data with new one,delete-Deletes data,patch-Applies Modification to data.
+#import requests for importing the requests library and it has 6 methods
+#requests.get(), requests.put(), requests.post(), requests.head(), requests.delete(), requests.patch().
+
+import requests
+data=requests.get("https://jsonplaceholder.typicode.com/posts/1")
+print(data.text)
+#if we give nrml link it gives html output of the page and in json format it gives when we use api kind link
+
+
+
+
+
+Output for All Codes:-
+(base) sricharan@MacBookAir git-clone % python set.py
+{2, 3.9, 53, 'q'}
+[53, 2, 'q', 3.9]
+0
+53
+2
+q
+3.9
+keys in D1 are dict_keys(['name', 'Work', 'phone-no', 'Address', 'Gender'])
+Values in D1 are dict_values(['Derry', 'Circus Hoster', 221221, 'Hyd', 'male'])
+Gettinf Particular name in D1 Derry
+False
+('The Solution for 23+45 is ', 68)
+Enter Your Birth year: 2004
+your age is  21
+Success
+{
+  "userId": 1,
+  "id": 1,
+  "title": "sunt aut facere repellat provident occaecati excepturi optio reprehenderit",
+  "body": "quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto"
+}
