@@ -1,0 +1,47 @@
+Request Methods (18-12-2025)
+
+The requests library is employed to execute HTTP requests, such as a POST request to a specified URL.
+import requests
+url = "https://example.com/api"
+data = {
+    'email': "Charan@123",
+    'username': "your account username"
+}
+# Sending a POST request with the 'data' dictionary serialized as JSON.
+requests.post(url, json=data)
+JSON Built-in Python Library
+The json module in Python furnishes an API for converting Python data structures into the JSON format (a process known as serialization) and for parsing JSON formatted data back into native Python objects (deserialization).
+Serialization (Python to JSON)
+The json.dumps() function serializes a Python object into a JSON formatted string.
+import json
+data = {
+    "name": "Charan",
+    "age": 20,
+    "course": "AIML"
+}
+# 'jd' holds the JSON formatted string.
+jd = json.dumps(data)
+print(jd)
+# Output: {"name": "Charan", "age": 20, "course": "AIML"}
+Deserialization (JSON to Python)
+The json.loads() function deserializes a JSON formatted string into a Python object, typically a dictionary or a list.
+jt = '{"name":"Charan","age":20}'
+# 'pd' holds the resulting Python dictionary.
+pd = json.loads(jt)
+print(pd)
+print(type(pd)) # Output: <class 'dict'> (Python object represented as a dictionary)
+print(type(jd)) # Output: <class 'str'> (JSON data represented as a string)
+# Note: In JSON, keys are strings, and values can be strings, numbers, booleans, arrays, objects, or null.
+Summary of Key Functions:
+json.dumps(): Converts a given Python data structure into a JSON string.
+json.loads(): Converts a JSON string back into a Python object.
+json.dump(): Converts a Python object and writes it to a JSON file.
+json.load(): Reads data from a JSON file and converts it into a Python object.
+
+Output :
+The execution of the Python script Api-requests.py from the git-clone directory by the user sricharan resulted in the following output:
+A JSON object: {"name": "Charan", "age": 20, "course": "AIML"}
+A Python dictionary: {'name': 'Charan', 'age': 20}
+The data type of the preceding output as a Python dictionary class: \<class 'dict'\>
+The data type of the input before conversion (presumably the JSON string) as a Python string class: \<class 'str'\>
+
